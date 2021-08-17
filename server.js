@@ -20,7 +20,7 @@ const port = process.env.PORT || 4040
 app.use(express.static('public'))
 app.get('/', (req, res) => {
     rollbar.log('thingy')
-    res.sendFile(path.join(__dirname, './Public/index.html'))
+    res.sendFile(path.join(__dirname, './public/index.html'))
 })
 
 
