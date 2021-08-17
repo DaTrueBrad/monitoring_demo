@@ -13,17 +13,12 @@ const rollbar = new Rollbar({
 
 // record a generic message and send it to Rollbar
 
-
-
 app.use(express.json())
 
 const port = process.env.PORT || 4040
 
 app.use(express.static('public'))
-app.get('/', function(req,res) {
-    rollbar.log('Hello world!')
-    res.sendFile(path.join(__dirname, '/public/index.html'))
-}) 
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, './public/index.html')))
 
 
 app.listen(port, () => console.log(`Running away with port ${port}!!`))
