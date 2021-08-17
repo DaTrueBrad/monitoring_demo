@@ -17,7 +17,7 @@ app.use(express.json())
 
 const port = process.env.PORT || 4040
 
-app.use(express.static('public'))
+app.use(express.static('client'))
 app.get('/', (req, res) => {
     rollbar.log('thingy')
     res.sendFile(path.join(__dirname, './client/index.html'))
